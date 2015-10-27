@@ -984,6 +984,7 @@
             currentTimeElement.html('--:--');
 
             unbindEventsForPlayback(mediaRenderer);
+            self.removeFromPlaylist(self.currentPlaylistIndex());
         };
 
         self.playVideo = function (item, mediaSource, startPosition, callback) {

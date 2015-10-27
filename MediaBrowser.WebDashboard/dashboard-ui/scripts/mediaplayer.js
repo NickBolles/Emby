@@ -1443,7 +1443,6 @@
             var mediaRenderer = self.currentMediaRenderer;
 
             if (mediaRenderer) {
-
                 mediaRenderer.stop();
 
                 Events.off(mediaRenderer, 'ended', self.playNextAfterEnded);
@@ -1475,7 +1474,7 @@
         };
 
         self.isPlaying = function () {
-            return self.playlist.length > 0;
+            return self.currentMediaRenderer ? !self.currentMediaRenderer.paused(): false;
         };
 
         self.getPlayerState = function () {
